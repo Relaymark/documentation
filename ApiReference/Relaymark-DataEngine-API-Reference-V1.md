@@ -338,7 +338,7 @@ A Registration is an implementation of a dataSource. It specifies that the owner
 
 #### Add a registration
 
-- Path: /data-engine/populate/registrations
+- Path: /data-engine/declaration/registrations
 - HTTP verb: POST
 - Description: This method add a new registration.
 
@@ -371,7 +371,7 @@ insert successful response
 
 #### Update a registration
 
-- Path: /data-engine/populate/registrations/{registrationShortId}
+- Path: /data-engine/declaration/registrations/{registrationShortId}
 - HTTP verb: PUT
 - Description: This method update a registration.
 
@@ -405,7 +405,7 @@ insert successful response
 
 #### List registrations
 
-- Path: /data-engine/populate/registrations
+- Path: /data-engine/declaration/registrations
 - HTTP verb: GET
 - Description: This method lists the registration you have access to.
 
@@ -435,7 +435,7 @@ When the query is successful, the HTTP response is a 200 OK and returns a [paged
 
 #### Get a registration By Id
 
-- Path: /data-engine/populate/registrations/{registrationShortId}
+- Path: /data-engine/declaration/registrations/{registrationShortId}
 - HTTP verb: GET
 - Description: This method returns a single registration by its short id.
 
@@ -451,7 +451,7 @@ insert successful response
 
 #### Delete a registration
 
-- Path: /data-engine/populate/registrations/{registrationShortId}
+- Path: /data-engine/declaration/registrations/{registrationShortId}
 - HTTP verb: DELETE
 - Description: This method deletes a registration.
 
