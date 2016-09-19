@@ -2,36 +2,36 @@
 <!-- TOC depthFrom:1 depthTo:6 insertAnchor:false orderedList:false updateOnSave:true withLinks:true -->
 
 - [Relaymark Directory REST API](#relaymark-directory-rest-api)
-	- [Connect to the Relaymark API](#connect-to-the-relaymark-api)
-		- [Register your application](#register-your-application)
-	- [Users](#users)
-		- [Get connected user informations](#get-connected-user-informations)
-			- [His companies](#his-companies)
-			- [His networks](#his-networks)
-			- [His location assignments](#his-location-assignments)
-			- [His applications](#his-applications)
-			- [His application setups](#his-application-setups)
-	- [Companies](#companies)
-		- [Create a company](#create-a-company)
-		- [Update a company](#update-a-company)
-		- [List companies](#list-companies)
-		- [Get a company by id](#get-a-company-by-id)
-		- [Delete a company](#delete-a-company)
-	- [Networks](#networks)
-		- [Create a network](#create-a-network)
-		- [Update a network](#update-a-network)
-		- [List networks](#list-networks)
-		- [Get a network by id](#get-a-network-by-id)
-		- [Delete a network](#delete-a-network)
-	- [Applications](#applications)
-		- [Create an application](#create-an-application)
-		- [List applications](#list-applications)
-		- [Get an application by name](#get-an-application-by-name)
-		- [Delete an application](#delete-an-application)
-	- [Annex](#annex)
-		- [Ids and short ids](#ids-and-short-ids)
-		- [LocalizedString object](#localizedstring-object)
-		- [Paged requests](#paged-requests)
+    - [Connect to the Relaymark API](#connect-to-the-relaymark-api)
+        - [Register your application](#register-your-application)
+    - [Users](#users)
+        - [Get connected user informations](#get-connected-user-informations)
+            - [His companies](#his-companies)
+            - [His networks](#his-networks)
+            - [His location assignments](#his-location-assignments)
+            - [His applications](#his-applications)
+            - [His application setups](#his-application-setups)
+    - [Companies](#companies)
+        - [Create a company](#create-a-company)
+        - [Update a company](#update-a-company)
+        - [List companies](#list-companies)
+        - [Get a company by id](#get-a-company-by-id)
+        - [Delete a company](#delete-a-company)
+    - [Networks](#networks)
+        - [Create a network](#create-a-network)
+        - [Update a network](#update-a-network)
+        - [List networks](#list-networks)
+        - [Get a network by id](#get-a-network-by-id)
+        - [Delete a network](#delete-a-network)
+    - [Applications](#applications)
+        - [Create an application](#create-an-application)
+        - [List applications](#list-applications)
+        - [Get an application by name](#get-an-application-by-name)
+        - [Delete an application](#delete-an-application)
+    - [Annex](#annex)
+        - [Ids and short ids](#ids-and-short-ids)
+        - [LocalizedString object](#localizedstring-object)
+        - [Paged requests](#paged-requests)
 
 <!-- /TOC -->
 
@@ -329,55 +329,70 @@ When the query is successful, the HTTP response is a 200 OK and returns the list
   "page": 1,
   "results": [
     {
-      "userId": "users/1",
-      "locationAssignmentId": "LocationAssignments/1",
-      "assignmentType": "member",
-      "position": "Member",
-      "affiliationId": "affiliations/1",
+      "userId": "users/1121",
+      "locationAssignmentId": "LocationAssignments/129",
+      "assignmentType": "companyLocationManager",
+      "position": "Membre",
+      "affiliationId": "affiliations/65",
+      "organizationUnitId": "OrganizationUnits/449373818650099712",
+      "companyLocationId": "CompanyLocations/194",
+      "customPermissionIds": [
+        "ApplicationPermissions/stimuland/peut_commander"
+      ],
+      "networkId": "networks/673",
+      "companyId": "companies/513",
       "affiliation": {
-        id:"affiliations/1",
-        shortId: 1,
-        networkId: "networks/1",
-        companyId: "companies/1",
-        status: "active",
-        type: "standard"
+        "networkId": "networks/673",
+        "companyId": "companies/513",
+        "status": 0,
+        "type": 2,
+        "id": "affiliations/65",
+        "shortId": 65
       },
-      "organizationUnitId": "OrganizationUnits/1",
-      "organizationUnit": {
-        "name": "my organization unit",
-        "description": "a standard organization unit",
-        "shortId": 1,
-        "Id": "OrganizationUnits/1"
-      },
-      "companyLocationId": "CompanyLocations/1",
       "companyLocation": {
-        "id": "CompanyLocations/1",
-        "shortId": 1,
-        "locationName": "point de vente 1"
+        "locationName": "Corellia",
+        "address": {
+          "street": "12 rue des peupliers",
+          "zipCode": "92700",
+          "city": "colombes",
+          "coordinates": {
+            "latitude": 48.9155548,
+            "longitude": 2.2266383999999562
+          }
+        },
+        "isPublic": false,
+        "id": "CompanyLocations/194",
+        "shortId": 194
+      },
+      "organizationUnit": {
+        "id": "OrganizationUnits/449373818650099712",
+        "shortId": "449373818650099712",
+        "name": "Voie Marchande Corellienne"
       },
       "customPermissions": [
         {
-          "userId": "users/1",
-          "applicationSetupId": "applicationSetups/1",
-          "applicationSetup": {
-            "id": "applicationSetups/1",
-            "shortId": 1,
-            "contextId": "networks/1",
+          "id": "ApplicationPermissions/stimuland/peut_commander",
+          "shortId": "peut_commander",
+          "application": {
+            "description": {
+              "en": "Le Stimuland"
+            },
+            "displayName": {
+              "en": "Stimuland"
+            },
+            "name": "stimuland",
+            "applicationType": "custom",
             "contextType": "network",
-            "applicationId": "applications/monapp"
+            "id": "applications/stimuland",
+            "shortId": "stimuland"
           },
-          "companyLocationId": "CompanyLocations/1",
-          "permissions": [
-            {
-              "name": "canMakeCommands",
-              "displayName": {
-                "en": "Can make Commands"
-              },
-              description: {
-                "en": "User can make commands for the company location"
-              }
-            }
-          ]
+          "name": "peut_commander",
+          "displayName": {
+            "en": "Peut commander"
+          },
+          "description": {
+            "en": "Peut commander"
+          }
         }
       ]
     }
